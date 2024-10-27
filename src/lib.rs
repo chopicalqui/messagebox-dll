@@ -11,8 +11,8 @@ pub extern "system" fn DllMain(_: HINSTANCE, fdw_reason: u32, _lpv_reserved: *co
             unsafe {
                 MessageBoxA(
                     HWND(null_mut()),
-                    PCSTR("Test DLL\0".as_ptr()),
-                    PCSTR("DLL successfully executed.\0".as_ptr()),
+                    PCSTR(b"Test DLL\0".as_ptr()),
+                    PCSTR(b"DLL successfully executed.\0".as_ptr()),
                     MB_OK,
                 );
             }
@@ -22,5 +22,5 @@ pub extern "system" fn DllMain(_: HINSTANCE, fdw_reason: u32, _lpv_reserved: *co
         },
         _ => {}
     }
-    1
+    0
 }
